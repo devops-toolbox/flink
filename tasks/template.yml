@@ -1,0 +1,10 @@
+---
+# Template configuration files for flink
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ flink_templates_copy }}"
+  when: flink_copy_templates

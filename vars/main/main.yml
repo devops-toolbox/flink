@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+flink_repos_create: "{{ _flink_repos_create['all']
+  | union ( _flink_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+flink_repos_download: "{{ _flink_repos_download['all']
+  | union ( _flink_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+flink_templates_copy: "{{ _flink_templates_copy['all']
+  | union ( _flink_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+flink_services_enable: "{{ _flink_services_enable['all']
+  | union ( _flink_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+flink_selinux_enable: "{{ _flink_selinux_enable['all']
+  | union ( _flink_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+flink_packages_remove: "{{ _flink_packages_remove['all']
+  | union ( _flink_packages_remove[my_os]
+  | default([]) ) }}"
+flink_packages_repos: "{{ _flink_packages_repos['all']
+  | union ( _flink_packages_repos[my_os]
+  | default([]) ) }}"
+flink_packages_prereq: "{{ _flink_packages_prereq['all']
+  | union ( _flink_packages_prereq[my_os]
+  | default([]) ) }}"
+flink_packages_install: "{{ _flink_packages_install['all']
+  | union ( _flink_packages_install[my_os]
+  | default([]) ) }}"
