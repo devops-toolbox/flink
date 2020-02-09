@@ -8,10 +8,10 @@ flink: Flink
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.flink](https://galaxy.ansible.com/devops-toolbox.flink)
+[https://galaxy.ansible.com/devopstoolbox.flink](https://galaxy.ansible.com/devopstoolbox.flink)
 
 ```bash
-ansible-galaxy install devops-toolbox.flink
+ansible-galaxy install devopstoolbox.flink
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: flink is configured
       import_role:
-        name: devops-toolbox.flink
+        name: devopstoolbox.flink
       vars:
         flink_packages_state: present
         flink_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
